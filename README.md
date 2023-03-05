@@ -56,8 +56,14 @@ https://github.com/Klerith/angular-paises
 https://primeng.org/
   PrimeNG para estilos/plantillas Angular
 
+https://www.primefaces.org/primeflex/
+  Flex en PRIMENG
+  npm install primeflex --save
+
 https://angular.io/api?query=pipe
   Pipes en Angular
+
+https://angular.io/api/common/DatePipe
 
 
 
@@ -69,6 +75,8 @@ ng generate component heroes/listado
 
 ng generate module <nombre>
   Me genera un nuevo módulo con las importaciones. Incluso con "CommonModule" para poder usar los *ngFor, *ngIf...
+ng generate module <nombre> --flat
+  El parámetro "flat" evitar crear el módulo dentro de una carpeta con el mismo nombre del módulo.
 
 ng generate component dbz/mainPage --skip-tests
   Me genera el componente, y al estar dentro de la carpeta DBZ (módulo creado anteriormente), me actualiza su DBZMODULE.ts con este nuevo componente.

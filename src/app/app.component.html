@@ -1,5 +1,22 @@
-<h1> {{ nombre | titlecase }} </h1>
-<h1> {{ valor | number }} </h1>
-<h1> {{ obj | json }} </h1>
+<!--
+PRUEBAS
+<div class="text-layout">
+  <h1> {{ nombre | titlecase }} </h1>
+  <h1> {{ valor | number }} </h1>
+  <h1> {{ obj | json }} </h1>
+</div>
 
-<button (click)="mostrarNombre()">Cambiar Nombre</button>
+<button pButton (click)="mostrarNombre()" icon="pi pi-bell" iconPos="right" class="p-button-help" label="Cambiar
+Nombre"></button>
+
+
+<p-card [header]="nombre |titlecase" subheader="Esto es un subheader">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, accusamus. Laboriosam dolorem quisquam, magnam
+  temporibus tempore voluptates, quo nisi dolor error, cumque corporis autem? Est expedita dolore quis cupiditate
+  ducimus.
+</p-card> 
+-->
+
+<app-menu></app-menu>
+
+<router-outlet></router-outlet>
