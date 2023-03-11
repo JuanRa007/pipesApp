@@ -1,1 +1,97 @@
-<p>no-comunes works!</p>
+<div class="text-layout">
+
+  <h1>Pipes no tan comunes</h1>
+  <p>
+    Pipes incluídos en Angular - Usualmente en el Common Module.
+  </p>
+
+</div>
+
+
+<div class="grid">
+  <div class="col md:col-6">
+    <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+      <p>
+        Saludos {{nombre}}, es un placer {{genero | i18nSelect:invitacionMapa}} a nuestro envento.
+      </p>
+      <button pButton type="button" class="p-button-help" (click)="cambiarPersona()">
+        Cambiar Persona
+      </button>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+      <p>
+        Actualmente {{clientes.length|i18nPlural:clientesMapa}}
+      </p>
+      <button pButton type="button" class="p-button-info" (click)="borrarCliente()">
+        Borrar Cliente
+      </button>
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="Slice Pipe" [toggleable]="true">
+
+      <b>Original:</b>
+      <pre>{{clientes}}</pre>
+
+      <b>slice:0:2</b>
+      <!-- Presenta los elementos del array incluyendo el primer argumente y excluyendo el segundo argumento. -->
+      <pre>{{clientes|slice:0:2}}</pre>
+
+      <b>slice:1:2</b>
+      <!-- Presenta los elementos del array incluyendo el primer argumente y excluyendo el segundo argumento. -->
+      <pre>{{clientes|slice:1:2}}</pre>
+
+      <b>slice:1:3</b>
+      <!-- Presenta los elementos del array incluyendo el primer argumente y excluyendo el segundo argumento. -->
+      <pre>{{clientes|slice:1:3}}</pre>
+
+      <b>slice:3:3</b>
+      <!-- No presenta nada que incluyo posición tres del array y ña excluyo. -->
+      <pre>{{clientes|slice:3:3}}</pre>
+
+      <!-- También funciona con STRING -->
+      <b>fernando:slice:0:4</b>
+      <pre>{{nombre|slice:0:4}}</pre>
+
+    </p-fieldset>
+  </div>
+
+
+  <div class="col md:col-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <pre>{{heroes|json}}</pre>
+    </p-fieldset>
+  </div>
+
+
+  <div class="col md:col-6">
+    <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+      <ul>
+        <li *ngFor="let item of persona |keyvalue">
+          <!-- {{ item | json }}   // Así los muestra ordenado alfabéticamente por las propiedades. -->
+          {{ item.key|titlecase}}: {{item.value}}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+
+
+  <div class="col md:col-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+
+      <!-- El pipe "async" se "subscribe" automáticamente al "observable" creado. -->
+      <pre>{{miObservable|async}}</pre>
+
+      <!-- Mostramos el mensaje de aviso hasta que nos llega el resultado de la promesa: 3500 microsegundos. -->
+      <pre *ngIf="!(valorPromesa|async)">Resolviendo observable...</pre>
+      <pre>{{valorPromesa|async}}</pre>
+
+    </p-fieldset>
+  </div>
+
+
+</div>
