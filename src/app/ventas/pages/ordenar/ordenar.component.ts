@@ -13,6 +13,7 @@ export class OrdenarComponent {
 
   // Nueva propiedad.
   enMayusculas: boolean = true;
+  ordenarPor: string = '';
 
   heroes: Heroe[] = [
     {
@@ -50,6 +51,11 @@ export class OrdenarComponent {
       this.enMayusculas = true;
     } */
     this.enMayusculas = !this.enMayusculas;
+  }
+
+  cambiarOrden(valor: string) {
+    this.ordenarPor = valor;
+    // console.log(valor);
   }
 
 }
