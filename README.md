@@ -87,6 +87,8 @@ ng generate component dbz/mainPage --skip-tests
 ng generate service gifs/services/gifs --skip-tests --s
   Generar un servicio dentro de carpetas no creadas aún.
 
+ng generate pipe ventas/pipes/ordenar --skip-tests
+  Generar un PIPE personalizado dentro de la carpeta "ventas/pipes/".
 
 
 

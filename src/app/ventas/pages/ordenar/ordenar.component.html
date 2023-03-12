@@ -1,1 +1,40 @@
-<p>ordenar works!</p>
+<div class="text-layout">
+
+  <h1>Pipes Personalizados</h1>
+  <p>Pipes creados por {{ 'nosotros' | mayusculas:enMayusculas }} mismos.</p>
+
+</div>
+
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+  </div>
+
+  <div class="p-toolbar-group-end">
+    <button pButton type="button" class="mr-1 p-button-warning" (click)="cambiarParametro()">Toggle mayúsculas</button>
+    <button pButton type="button" icon="pi pi-sort" class="mr-1">Por Nombre</button>
+    <button pButton type="button" icon="pi pi-sort" class="mr-1 p-button-success">Vuela</button>
+    <button pButton type="button" icon="pi pi-sort" class="mr-1 p-button-help">Por Color</button>
+  </div>
+</p-toolbar>
+
+
+<div class="grid">
+  <div class="col mt-2">
+    <p-table [value]="heroes |ordenar" [tableStyle]="{'min-width': '50rem'}">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nombre</th>
+          <th>Vuela</th>
+          <th>Color</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-heroes>
+        <tr>
+          <td>{{heroes.nombre}}</td>
+          <td>{{heroes.vuela|vuela|titlecase}}</td>
+          <td>{{heroes.color}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
